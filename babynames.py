@@ -76,41 +76,26 @@ def extract_names(filename):
 
 def main():
   # Chương trình này có thể nhận đối số đầu vào là một hoặc nhiều tên file
-  # args = sys.argv[1:]
-  # summaryfile = None
-
-  # if not args:
-  #   print('usage: [--summaryfile] file [file ...]')
-  #   sys.exit(1)
+  args = sys.argv[1:]
   
-  # # Notice the summary flag and remove it from args if it is present.
-  # summary = False
-  # if args[0] == '--summaryfile':
-  #   summary = True
-  #   del args[0]
-
   
+  if not args:
+    print('usage: [--summaryfile] file [file ...]')
+    sys.exit(1)
+
+  # Notice the summary flag and remove it from args if it is present.
+  summary = False
+  if args[0] == '--summaryfile':
+    summary = True
+    del args[0]
+
   # +++your code here+++
   # Với mỗi tên file, gọi hàm extract_names ở trên và in kết quả ra stdout
   # hoặc viết kết quả ra file summary (nếu có input --summaryfile).
-  # try:
-
-  #   opts, arg = getopt.getopt(args, "s:",["summaryfile="])
-
-    # for opt, arg in opts:
-    #       if opts in ["-s", "--summaryfile"]:
-    #             summaryfile = arg
-
-    #             print(summaryfile)
-    #print(arg[0])            
-    #data = extract_names()
-    #print(data)
-          
-  #except getopt.error as err:
-    #print(error)
-  data = extract_names("baby1990.html")
-  print(data)
-
+  for arg in args:
+        print(args)
+        data = extract_names(arg)
+        print(data)
 
 if __name__ == '__main__':
   main()
