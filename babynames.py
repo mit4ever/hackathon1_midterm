@@ -93,7 +93,6 @@ def main():
   # Với mỗi tên file, gọi hàm extract_names ở trên và in kết quả ra stdout
   # hoặc viết kết quả ra file summary (nếu có input --summaryfile).
   for arg in args:
-        print(args)
         data = extract_names(arg)
         print(data)
 
