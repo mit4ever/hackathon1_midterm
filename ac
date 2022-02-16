@@ -11,7 +11,7 @@ function OwnError()
 echo "Setup Repository For Rethinkdb, Please Wait..."
 source /etc/lsb-release \
 && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" > /etc/apt/sources.list.d/rethinkdb.list \
-&& wget -qO- http://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add - \
+&& wget -qO- https://download.rethinkdb.com/repository/raw/pubkey.gpg | sudo apt-key add - \
 || OwnError "Unable to setup rethinkdb repository, exit status = " $?
 
 # Install wget and curl
