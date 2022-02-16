@@ -8,11 +8,11 @@ function OwnError()
 }
 
 # Repository for rethinkdb
-#echo "Setup Repository For Rethinkdb, Please Wait..."
-#source /etc/lsb-release \
-#&& echo "https://download.rethinkdb.com/repository/ubuntu-$DISTRIB_CODENAME $DISTRIB_CODENAME" > /etc/apt/sources.list.d/rethinkdb.list \
-#&& wget -qO- https://download.rethinkdb.com/repository/raw/pubkey.gpg | sudo apt-key add - \
-#|| OwnError "Unable to setup rethinkdb repository, exit status = " $?
+echo "Setup Repository For Rethinkdb, Please Wait..."
+source /etc/lsb-release \
+&& echo "https://download.rethinkdb.com/repository/ubuntu-$DISTRIB_CODENAME $DISTRIB_CODENAME" > /etc/apt/sources.list.d/rethinkdb.list \
+&& wget -qO- https://download.rethinkdb.com/repository/raw/pubkey.gpg | sudo apt-key add - \
+|| OwnError "Unable to setup rethinkdb repository, exit status = " $?
 
 # Install wget and curl
 echo "Executing: apt-get update, Please wait..."
